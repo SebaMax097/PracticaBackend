@@ -1,0 +1,70 @@
+{
+    "database": "sales.db",
+    "version": 1,
+    "encrypted": false,
+    "mode": "full",
+    "tables": [
+      {
+        "name": "CLIENTE",
+        "schema": [
+          {
+            "column": "ID_Cliente",
+            "value": "INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL"
+          },
+          {
+            "column": "Nombre_Apellido",
+            "value": "TEXT NOT NULL"
+          },
+          {
+            "column": "Deuda",
+            "value": "REAL"
+          }
+        ]
+      },
+      {
+        "name": "PRODUCTO",
+        "schema": [
+          {
+            "column": "ID_Producto",
+            "value": "INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL"
+          },
+          {
+            "column": "NombreProducto",
+            "value": "TEXT NOT NULL"
+          },
+          {
+            "column": "Stock",
+            "value": "INTEGER"
+          }
+        ]
+      },
+      {
+        "name": "CLIENTE_PRODUCTO",
+        "schema": [
+          {
+            "column": "ID_Cliente",
+            "value": "INTEGER NOT NULL"
+          },
+          {
+            "column": "ID_Producto",
+            "value": "INTEGER NOT NULL"
+          },
+          {
+            "column": "Cantidad",
+            "value": "INTEGER NOT NULL"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "column": "ID_Cliente",
+            "references": "CLIENTE(ID_Cliente)"
+          },
+          {
+            "column": "ID_Producto",
+            "references": "PRODUCTO(ID_Producto)"
+          }
+        ]
+      }
+    ]
+  }
+  
